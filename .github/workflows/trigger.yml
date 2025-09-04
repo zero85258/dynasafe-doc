@@ -1,0 +1,28 @@
+name: Dispatch docs-update to documentation repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify_documentation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      - name: Send repository_dispatch -> MO repo
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.DARREN_TOKEN }}
+          repository: MO_ACCOUNT/MO_REPOSITORY   # MO 的倉庫
+          event-type: docs-update
+          client-payload: >-
+            {
+              "ref": "${{ github.ref }}",
+              "sha": "${{ github.sha }}",
+              "source_repo_full_name": "${{ github.repository }}",
+              "token_secret": "JONATHAN_TOKEN"
+            }
+            
