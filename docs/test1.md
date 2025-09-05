@@ -1,6 +1,6 @@
 # Jonathan :D
 
-![](mo-token.png)
+![](http://10.250.75.161/tools/image/mo-token.png)
 
 ```bash
 echo ":D"
