@@ -15,7 +15,7 @@ jobs:
       - name: Send repository_dispatch -> MO repo
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.DARREN_TOKEN }}
+          token: ${{ secrets.MO_TOKEN }}
           repository: MO_ACCOUNT/MO_REPOSITORY   # MO 的倉庫
           event-type: docs-update
           client-payload: >-
