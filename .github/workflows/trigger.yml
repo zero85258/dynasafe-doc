@@ -16,7 +16,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.MO_TOKEN }}
-          repository: MO_ACCOUNT/MO_REPOSITORY   # MO 的倉庫
+          repository: salomob-dynasafe/documentation   # MO 的倉庫
           event-type: docs-update
           client-payload: >-
             {
